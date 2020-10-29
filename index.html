@@ -40,8 +40,10 @@
     </style>
 </head>
 
-<body>
+<body style="background-color: black">
+    <center><a href="left.html">Step Left</a></center>
     <div id="image2d"></div>
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -75,15 +77,15 @@
                     done(error, tile);
                 }
             })(done, error, tile);
-            tile.src = "output_files/" + coords.z + "/" + coords.x + "_" + coords.y + ".jpeg";
+            tile.src = "left_front_files/" + coords.z + "/" + coords.x + "_" + coords.y + ".jpeg";
             return tile;
 
         }, {
-            width: 7145,
-            height: 3378,
+            width: 10286,
+            height: 11817,
             detectRetina: true,
             tileSize: 254,
-            maxNativeZoom: 13,
+            maxNativeZoom: 14,
             overlap: 1
         });
         layer.addTo(map);
@@ -94,21 +96,21 @@
             iconSize: [22, 22]
         });
 
-        var marker = L.marker([-0.18062823051513024, 0.75774381531889], {
-            icon: targetLocationCssIcon
-        }).addTo(map);
-        marker.bindPopup(
-            '<iframe width="560" height="315" src="https://www.youtube.com/embed/6hH8rxarVG8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', {
-                maxWidth: 560
-            });
+        // var marker = L.marker([-0.18062823051513024, 0.75774381531889], {
+        //     icon: targetLocationCssIcon
+        // }).addTo(map);
+        // marker.bindPopup(
+        //     '<iframe width="560" height="315" src="https://www.youtube.com/embed/6hH8rxarVG8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', {
+        //         maxWidth: 560
+        //     });
 
-        var marker = L.marker([-0.2130630211339462, 0.6151425807016819], {
-            icon: targetLocationCssIcon
-        }).addTo(map);
-        marker.bindPopup(
-            '<iframe width="560" height="315" src="https://www.youtube.com/embed/vIWSkM5UHhM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', {
-                maxWidth: 560
-            });
+        // var marker = L.marker([-0.2130630211339462, 0.6151425807016819], {
+        //     icon: targetLocationCssIcon
+        // }).addTo(map);
+        // marker.bindPopup(
+        //     '<iframe width="560" height="315" src="https://www.youtube.com/embed/vIWSkM5UHhM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', {
+        //         maxWidth: 560
+        //     });
 
         // Restrict to bounds
         //map.setMaxBounds(bounds);
