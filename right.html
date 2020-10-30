@@ -42,8 +42,7 @@
 
 <body style="background-color: black">
 
-    <center><a href="right_left.html">Step Left</a><a href="right_right.html">Step Right</a></center>
-
+ 
     <div id="image2d"></div>
     
     <!-- Optional JavaScript -->
@@ -66,12 +65,7 @@
             crs: L.CRS.Simple //Set a flat projection, as we are projecting an image
         }).setView(new L.LatLng(0, 0), 0);
 
-        // var dzLayer = L.tileLayer.deepzoom('output_files/', { 
-        //     width: 3378,
-        //     height: 7145,
-        //     imageFormat: "jpeg",
-        //     tileSize: "254"
-        // }).addTo(map);
+
         var layer = new L.tileLayer.elevator(function (coords, tile, done) {
             var error;
             tile.onload = (function (done, error, tile) {
@@ -91,28 +85,106 @@
             overlap: 1
         });
         layer.addTo(map);
-        var targetLocationCssIcon = L.divIcon({
-            // Specify a class name we can refer to in CSS.
-            className: 'target-css-icon css-icon',
-            html: '<div class="target_ring"></div>',
-            iconSize: [22, 22]
+        
+        
+
+
+        var greenIcon = L.icon({
+            iconUrl: 'marigold_sprite.png',
+            // shadowUrl: '',
+
+            iconSize:     [75, 75], // size of the icon
+            // shadowSize:   [50, 64], // size of the shadow
+            iconAnchor:   [37, 37], // point of the icon which will correspond to marker's location
+            // shadowAnchor: [4, 62],  // the same for the shadow
+            // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
         });
 
-        // var marker = L.marker([-0.18062823051513024, 0.75774381531889], {
-        //     icon: targetLocationCssIcon
+        var leftArrow = L.icon({
+            iconUrl: 'arrow_left.png',
+            // shadowUrl: '',
+
+            iconSize:     [66, 75], // size of the icon
+            // shadowSize:   [50, 64], // size of the shadow
+            iconAnchor:   [37, 37], // point of the icon which will correspond to marker's location
+            // shadowAnchor: [4, 62],  // the same for the shadow
+            // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+
+         var rightArrow = L.icon({
+            iconUrl: 'arrow_right.png',
+            // shadowUrl: '',
+
+            iconSize:     [66, 75], // size of the icon
+            // shadowSize:   [50, 64], // size of the shadow
+            iconAnchor:   [37, 37], // point of the icon which will correspond to marker's location
+            // shadowAnchor: [4, 62],  // the same for the shadow
+            // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+
+
+        // Isabel O
+        var marker = L.marker([-0.11869262275392746, 0.23444662437182176], {
+            icon: greenIcon
+        }).addTo(map);
+                marker.bindPopup(
+            '<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/958321/sp/95832100/embedIframeJs/uiconf_id/31462381/partner_id/958321?iframeembed=true&playerId=kaltura_player&entry_id=1_hrd6dee5&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en_US&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_458k8t5p" width="400" height="285" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player"></iframe>', {
+                maxWidth: 560
+            });
+
+        // // Ginger B
+        // var marker = L.marker([out of view], {
+        //     icon: greenIcon
         // }).addTo(map);
-        // marker.bindPopup(
-        //     '<iframe width="560" height="315" src="https://www.youtube.com/embed/6hH8rxarVG8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', {
+        //         marker.bindPopup(
+        //     '', {
         //         maxWidth: 560
         //     });
 
-        // var marker = L.marker([-0.2130630211339462, 0.6151425807016819], {
-        //     icon: targetLocationCssIcon
-        // }).addTo(map);
-        // marker.bindPopup(
-        //     '<iframe width="560" height="315" src="https://www.youtube.com/embed/vIWSkM5UHhM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', {
-        //         maxWidth: 560
-        //     });
+        // Damaris A
+        var marker = L.marker([-0.29004254599695956, 0.2615011343749865], {
+            icon: greenIcon
+        }).addTo(map);
+                marker.bindPopup(
+            '<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/958321/sp/95832100/embedIframeJs/uiconf_id/31462381/partner_id/958321?iframeembed=true&playerId=kaltura_player&entry_id=1_m9srdgqx&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en_US&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_30fzl53q" width="400" height="285" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player"></iframe>', {
+                maxWidth: 560
+            });
+
+        // Sofia V
+        var marker = L.marker([-0.3811037201051548, 0.1886250291838321], {
+            icon: greenIcon
+        }).addTo(map);
+                marker.bindPopup(
+            '<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/958321/sp/95832100/embedIframeJs/uiconf_id/31462381/partner_id/958321?iframeembed=true&playerId=kaltura_player&entry_id=1_36slwemp&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en_US&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_ucvbwa0r" width="400" height="285" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player"></iframe>', {
+                maxWidth: 560
+            });
+
+
+
+
+        function loadPage(e) {
+
+            location.pathname = location.pathname.replace(/(.*)\/[^/]*/, "$1/"+this.options.win_url);
+
+        }
+          var marker = L.marker([  -0.2448993567997227, 0.016806818603902537], {
+            icon: leftArrow,
+            win_url: "right_left.html"
+        }).addTo(map);
+        marker.on('click', loadPage);
+            
+                var marker = L.marker([  -0.2469001685382825, 0.3985616983211173], {
+            icon: rightArrow,
+            win_url: "right_right.html"
+        }).addTo(map);
+        marker.on('click', loadPage);
+                
+        
+        
+
+
+
+
 
         // Restrict to bounds
         //map.setMaxBounds(bounds);
